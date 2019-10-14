@@ -1,5 +1,6 @@
 package inheritance.tracker;
 
+import java.util.Arrays;
 import java.util.Random;
 import static java.lang.System.currentTimeMillis;
 
@@ -43,7 +44,7 @@ public class Tracker {
      */
     public boolean replace(String id, Item item){
         boolean result = false;
-        for (int i = 0; i < items.length; i++){
+        for (int i = 0; i <= position; i++){
             if (items[i] != null && items[i].getId().equals(id)){
                 items[i] = item;
                 result = true;
@@ -75,15 +76,7 @@ public class Tracker {
      * @return список заявок.
      */
     public Item[] findAll(){
-        Item[] result = new Item[position];
-        int index = 0;
-        for (int i = 0; i < this.items.length; i++){
-            if (this.items[i] != null){
-                System.arraycopy(this.items, i , result, index, 1);
-                index++;
-            }
-        }
-        return result;
+        return Arrays.copyOf(this.items, this.position);
     }
 
     /**
@@ -94,9 +87,10 @@ public class Tracker {
     public Item[] findByName(String key){
         Item[] result = new Item[position];
         int index = 0;
-        for (int i = 0; i < this.items.length; i++){
-            if (this.items[i].getName().equals(key)){
-                System.arraycopy(this.items, i , result, index, 1);
+        for (int i = 0; i <= position; i++){
+            if (this.items[i] != null && this.items[i].getName().equals(key)){
+                result[index] = items[i];
+                ++index;
                 break;
             }
         }
@@ -110,9 +104,9 @@ public class Tracker {
      */
     public Item findById(String id){
         Item result = null;
-        for (Item item : this.items) {
-            if (item.getId().equals(id)) {
-                result = item;
+        for (int i = 0; i <= position; i++) {
+            if (items[i] != null && items[i].getId().equals(id)) {
+                result = items[i];
                 break;
             }
         }
