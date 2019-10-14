@@ -1,4 +1,4 @@
-package tracker;
+package inheritance.tracker;
 
 public class Item {
     private String id;

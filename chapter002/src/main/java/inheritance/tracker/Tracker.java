@@ -1,4 +1,4 @@
-package tracker;
+package inheritance.tracker;
 
 import java.util.Random;
 import static java.lang.System.currentTimeMillis;

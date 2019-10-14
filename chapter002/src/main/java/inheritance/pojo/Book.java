@@ -1,4 +1,4 @@
-package pojo;
+package inheritance.pojo;
 
 public class Book {
     private String name;
