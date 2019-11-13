@@ -72,7 +72,7 @@ public class StartUI {
             } else if (select == 1) {
                 StartUI.printlnItem(input, tracker);
             } else if (select == 2) {
-                StartUI.createItem(input, tracker);
+                StartUI.replaceItem(input, tracker);
             } else if (select == 3) {
                 StartUI.deleteItem(input, tracker);
             } else if (select == 4) {
