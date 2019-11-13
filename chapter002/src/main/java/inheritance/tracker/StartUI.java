@@ -21,11 +21,9 @@ public class StartUI {
         System.out.println("=== Edit Item ====");
         String id = input.askStr("Enter Id: ");
         String name = input.askStr("Enter new name: ");
-        if (tracker.replace(id, new Item(name))) {
-            System.out.println("Update successful.");
-        } else {
-            System.out.println("Id not found.");
-        }
+        Item item = new Item(name);
+        item.setId(id);
+        tracker.replace(id, item);
     }
 
     public static void deleteItem(Input input, Tracker tracker){
