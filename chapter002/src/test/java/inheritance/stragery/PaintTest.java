@@ -42,13 +42,14 @@ public class PaintTest {
                                 .toString()
                 )
         );
+        System.setOut(stdout);
     }
 
     @Test
     public void whenDrawTriangle() {
         new Paint().draw(new Triangle());
         assertThat(
-                new String(out.toByteArray()),
+                this.out.toString(),
                 is(
                         new StringBuilder()
                                 .append("   *")
@@ -59,5 +60,6 @@ public class PaintTest {
                                 .toString()
                 )
         );
+        System.setOut(stdout);
     }
 }
