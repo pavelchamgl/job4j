@@ -1,7 +1,5 @@
 package inheritance.tracker;
 
-import java.time.Year;
-
 public class DeleteAction implements UserAction {
     @Override
     public String name() {
