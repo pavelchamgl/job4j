@@ -8,14 +8,14 @@ public class FindNameAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        String key = input.askStr("Enter key: ");
-        Item[] itemArr = tracker.findByName(key);
+        String name = input.askStr("Enter name: ");
+        Item[] itemArr = tracker.findByName(name);
         if (itemArr.length != 0) {
             for (Item item : itemArr) {
-                System.out.println(item.getName() + " (" + item.getId() + ")");
+                System.out.println(String.format("%s %s", item.getId(), item.getName()));
             }
         } else {
-            System.out.println("Key not found.");
+            System.out.println("Name not found.");
         }
         return true;
     }

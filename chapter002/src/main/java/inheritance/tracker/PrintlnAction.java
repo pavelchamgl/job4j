@@ -8,9 +8,8 @@ public class PrintlnAction implements UserAction{
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        Item[] result = tracker.findAll();
-        for (Item value : result) {
-            System.out.println(value);
+        for (Item item : tracker.findAll()) {
+            System.out.println(String.format("%s %s", item.getId(), item.getName()));
         }
         return true;
     }
