@@ -1,9 +1,9 @@
 package inheritance.tracker;
 
-public class ReplaceAction implements UserAction{
-    @Override
-    public String name() {
-        return "=== Edit Item ====";
+public class ReplaceAction extends BaseAction{
+
+    public ReplaceAction(int key) {
+        super(key, "=== Edit Item ====");
     }
 
     @Override

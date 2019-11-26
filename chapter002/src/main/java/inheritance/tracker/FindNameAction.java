@@ -1,9 +1,9 @@
 package inheritance.tracker;
 
-public class FindNameAction implements UserAction {
-    @Override
-    public String name() {
-        return "=== Find items by Name ====";
+public class FindNameAction extends BaseAction{
+
+    public FindNameAction(int key) {
+        super(key, "=== Find items by Name ====");
     }
 
     @Override

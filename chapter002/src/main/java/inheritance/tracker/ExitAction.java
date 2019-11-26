@@ -1,9 +1,9 @@
 package inheritance.tracker;
 
-public class ExitAction implements UserAction {
-    @Override
-    public String name() {
-        return "=== Exit Program ====";
+public class ExitAction extends BaseAction{
+
+    public ExitAction(int key) {
+        super(key, "=== Exit Program ====");
     }
 
     @Override

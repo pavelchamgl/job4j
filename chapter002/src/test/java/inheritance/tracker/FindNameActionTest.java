@@ -16,7 +16,7 @@ public class FindNameActionTest {
         Tracker tracker = new Tracker();
         Item item = new Item("Name");
         tracker.add(item);
-        FindNameAction findName = new FindNameAction();
+        FindNameAction findName = new FindNameAction(5);
         findName.execute(new StubInput(new String[] {"Name"}), tracker);
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
                 .add(item.getId() + " " + item.getName())

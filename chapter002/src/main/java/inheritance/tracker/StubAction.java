@@ -1,10 +1,14 @@
 package inheritance.tracker;
 
-public class StubAction implements UserAction {
+public class StubAction extends BaseAction {
     private boolean call = false;
 
+    protected StubAction(int key) {
+        super(key, "Stub action");
+    }
+
     @Override
-    public String name() {
+    public String info() {
         return "Stub action";
     }
 

@@ -16,7 +16,7 @@ public class PrintlnActionTest {
         Tracker tracker = new Tracker();
         Item item = new Item("fix bug");
         tracker.add(item);
-        PrintlnAction print = new PrintlnAction();
+        PrintlnAction print = new PrintlnAction(1);
         print.execute(new StubInput(new String[] {}), tracker);
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
                 .add(item.getId() + " " + item.getName())

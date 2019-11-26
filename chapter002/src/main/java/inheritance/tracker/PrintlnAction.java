@@ -1,9 +1,9 @@
 package inheritance.tracker;
 
-public class PrintlnAction implements UserAction{
-    @Override
-    public String name() {
-        return "=== all Item ====";
+public class PrintlnAction extends BaseAction{
+
+    public PrintlnAction(int key) {
+        super(key, "=== All Item ====");
     }
 
     @Override

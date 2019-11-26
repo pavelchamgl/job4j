@@ -1,9 +1,9 @@
 package inheritance.tracker;
 
-public class DeleteAction implements UserAction {
-    @Override
-    public String name() {
-        return "=== Delete Item ====";
+public class DeleteAction extends BaseAction{
+
+    public DeleteAction(int key) {
+        super(key, "=== Delete Item ====");
     }
 
     @Override
