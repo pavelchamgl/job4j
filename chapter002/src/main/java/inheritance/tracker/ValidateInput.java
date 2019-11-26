@@ -32,15 +32,21 @@ public class ValidateInput implements Input {
         boolean invalid = true;
         int value = -1;
         do {
-            try {
-                value = input.askInt(question, max);
-                invalid = false;
-            } catch (IllegalStateException moe) {
-                System.out.println("Please select key from menu ");
-            } catch (NumberFormatException nfe) {
-                System.out.println("Please enter validate data again ");
-            }
+            value = this.validate(question, max);
+            invalid = false;
         } while (invalid);
+        return value;
+    }
+
+    private int validate(String question, int max) {
+        int value = -1;
+        try {
+            value = input.askInt(question, max);
+        } catch (IllegalStateException moe) {
+            System.out.println("Please select key from menu ");
+        } catch (NumberFormatException nfe) {
+            System.out.println("Please enter validate data again ");
+        }
         return value;
     }
 }
